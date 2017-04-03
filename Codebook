@@ -10,3 +10,38 @@ train/X_train.txt': Training set.
 train/y_train.txt': Training labels.
 test/X_test.txt': Test set.
 test/y_test.txt': Test labels.
+
+Transformations
+Change column names of x_train to names listed in features
+Change column names of y_train" to ActivityID"
+Change column names of subject_train to "SubjectID"
+Change column names of x_test to names listed in features
+Change column names of y_test to "ActivityID"
+Change column names of subject_test to "SubjectID"
+Change column names of activity_labels to ('ActivityID','ActivityType')
+
+Bind columns of y_train, x_train, and subject_train together
+Bind columns of y_test, x_test, and subject_test together
+Bind rows of the previous two results together
+
+Subset columns to only include SubjectID, ActivityID and all columns that contain either "mean" or "std"
+
+Change 'GyroJerk' to "AngularAcceleration" in all column names
+Change 'Gyro' to "Gyroscope" in all column names
+Change 'Mag' to "Magnitude" in all column names
+Change '^t' to "Time" in all column names
+Change '^f' to "Frequency" in all column names
+Change 'mean(' to ".Mean" in all column names
+Change 'std(' to ".StandardDeviation" in all column names
+Change 'Freq\\.' to "Frequency." in all column names
+Change 'Freq$' to "Frequency" in all column names
+Change "[][!#$%(*,.:;<=>@^_`|~.{}]" to "" in all column names
+
+Join Activity Labels to final data set
+Remove ActivityID
+Group by SubjectID and ActivityType
+Remove NAs
+Calculate the mean for all columns by SubjectID and ActivityType
+Order by SubjectID and ActivityType
+
+Write results to csv file
